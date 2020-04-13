@@ -1,7 +1,7 @@
 # Project1-WolfandSheep
 Authors
 -------
-o	Ana Carvalho (a21802128)
+Ana Carvalho (a21802128)
 Afonso Teixeira (a21803282)
 Joana Silva (a21805651)
 
