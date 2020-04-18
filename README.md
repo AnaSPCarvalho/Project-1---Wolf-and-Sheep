@@ -6,7 +6,7 @@
 * Afonso Teixeira (a21803282)
 * Joana Silva (a21805651)
 
-Informação de quem fez o quê no projeto. Esta informação é obrigatória e deve refletir os commits feitos no Git.
+###Who did what:
 | Ana Carvalho | Afonso Teixeira | Joana Silva |
 |--------------|-----------------|-------------|
 |              |                 |             |
