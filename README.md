@@ -39,10 +39,10 @@ o	Indicação do repositório público Git utilizado. Esta indicação é opcion
 >	Descrição da solução, com breve explicação de como o programa foi organizado, indicação dos métodos/funções e enumerações criadas.
 >	Um fluxograma mostrando a sequência do programa.
 
+```csharp
+   Console.OutputEncoding = System.Text.Encoding.UTF8
+```
 
-'''
-Console.OutputEncoding = System.Text.Encoding.UTF8
-'''
 •	Referências, incluindo trocas de ideias com colegas ( foi dicutido com um colega, sobre a possibilidade de se inserir símbolos diferentes no c´digo, para o tabuleiro do jogo. O conselho foi o uso de UTF-8, que permitia inserir characteres considerados estranhos. depois de alguma pesquisa, chegamos ao uso Console.OutputEncoding = System.Text.Encoding.UTF8, no stackoverflw https://stackoverflow.com/questions/5750203/how-to-write-unicode-characters-to-the-console., código aberto reutilizado (e.g., do StackOverflow) e bibliotecas de terceiros utilizadas. Devem ser o mais detalhados possível.
 
 
