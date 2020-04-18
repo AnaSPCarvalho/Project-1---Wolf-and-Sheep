@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wolfandsheep</name>
+    </assembly>
+    <members>
+        <member name="T:WAS.Board">
+            <summary>
+            Board class
+            Stores de positions of the wolf and sheep on the board.
+            </summary>
+        </member>
+        <member name="M:WAS.Board.#ctor">
+            <summary>
+            Sets wolf and sheep positions.
+            </summary>
+        </member>
+        <member name="M:WAS.Board.IsWolfAtBottom">
+            <summary>
+            Checks if the wolf is at the bottom
+            </summary>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.IsWolfSurrounded">
+            <summary>
+            Checks if the wolf is surrounded
+            </summary>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.IsSheepOrWallAt(System.Int32,System.Int32)">
+            <summary>
+            Checks if a sheep or a wall is at position x, y
+            </summary>
+            <param name="x"></param>
+            <param name="y">xplicar para que serve este parametro</param>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.IsSheepAt(System.Int32,System.Int32)">
+            <summary>
+             Checks if a sheep is at position x, y
+            </summary>
+            <param name="x">xplicar para que serve este parametro</param>
+            <param name="y">xplicar para que serve este parametro</param>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.DoWolfTurn">
+            <summary>
+             Processes the wolf turn
+            </summary>
+        </member>
+        <member name="M:WAS.Board.DisplayWolfMoves">
+            <summary>
+             Displays all moves possible by the wolf
+            </summary>
+        </member>
+        <member name="M:WAS.Board.CanMoveWolf(System.Int32,System.Int32)">
+            <summary>
+             Checks if the wolf can move to `x, y`
+            </summary>
+            <param name="x">explicar para que serve este parametro</param>
+            <param name="y">explicar para que serve este parametro</param>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.MoveWolf(System.Int32,System.Int32)">
+            <summary>
+            Tries to move the wolf to a position.
+            </summary>
+            <param name="x">explicar para que serve este parametro</param>
+            <param name="y">explicar para que serve este parametro</param>
+            <returns>/// Returns `true` if successful, else returns false</returns>
+        </member>
+        <member name="M:WAS.Board.DoSheepTurn">
+            <summary>
+             Processes the sheep turn
+            </summary>
+        </member>
+        <member name="M:WAS.Board.DoSingularSheepTurn(System.Int32)">
+            <summary>
+            Processes a single sheep's turn 
+            /// if the player wants to choose another sheep       
+            </summary>
+            <param name="idx">explicar para que serve este parametro</param>
+            <returns> Returns `true` if success, else returns `false`</returns>
+        </member>
+        <member name="M:WAS.Board.DisplaySheepMoves(System.Int32)">
+            <summary>
+            Displays all moves possible by the `idx`th sheep
+            </summary>
+            <param name="idx">explicar para que serve este parametro</param>
+        </member>
+        <member name="M:WAS.Board.CanMoveSheep(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks if the `idx`th sheep can move to x, y
+            </summary>
+            <param name="idx">explicar para que serve este parametro</param>
+            <param name="x">explicar para que serve este parametro</param>
+            <param name="y">explicar para que serve este parametro</param>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.MoveSheep(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="idx">explicar para que serve este parametro</param>
+            <param name="x">explicar para que serve este parametro</param>
+            <param name="y">explicar para que serve este parametro</param>
+            <returns>descreve o valor de retorno de uma declaração de método</returns>
+        </member>
+        <member name="M:WAS.Board.Display">
+            <summary>
+            Prints the board
+            </summary>
+        </member>
+        <member name="T:WAS.Program">
+            <summary>
+            Main class for the whole program
+            </summary>
+        </member>
+        <member name="M:WAS.Program.Main(System.String[])">
+            <summary>
+            Entry function
+            </summary>
+            <param name="args">explicar para que serve este parametro</param>
+        </member>
+    </members>
+</doc>
