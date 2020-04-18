@@ -14,10 +14,35 @@ namespace WAS
             // Create a new board for the whole game
             Board board = new Board();
 
-            // Display the board
-            board.Display();
+            // If the current turn is the Wolf's
+            bool isWolfTurn = true;
 
+			while (true)
+			{
 
-        }
+				// Display the board
+				board.Display();
+
+				// Check the turn
+				if (isWolfTurn)
+				{
+					Console.WriteLine("Wolf, move!");
+					board.DoWolfTurn();
+				}
+
+				else
+				{
+					Console.WriteLine("Sheep, move!");
+					board.DoSheepTurn();
+				}
+
+				// And set the turn as the other one
+				isWolfTurn = !isWolfTurn;
+			}
+
+			// Wait for newkey
+			Console.WriteLine("Press enter to exit!");
+			Console.ReadLine();
+		}
     }
 }

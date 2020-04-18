@@ -39,6 +39,54 @@ namespace WAS
                    (x == sheep[3][0] && y == sheep[3][1]);
         }
 
+        // Wolf's turn
+        public void DoWolfTurn()
+        {
+            DisplayWolfMoves();
+
+
+            // Get user input
+            while (true)
+            {
+
+                Console.WriteLine("Usage: '<x> <y>'");
+                String[] args = Console.ReadLine().Split();
+
+                // If we didn't receive 2 arguments "x y" warn and retry
+                if (args.Length != 2)
+                {
+                    Console.WriteLine("Must have 2 arguments'");
+                    continue;
+                }
+
+                // Convert both arguments to x, y
+                int x, y;
+                if (!int.TryParse(args[0], out x))
+                {
+                    Console.WriteLine("x must be int!");
+                    continue;
+                }
+
+                if (!int.TryParse(args[1], out y))
+                {
+                    Console.WriteLine("y must be int!");
+                    continue;
+                }
+
+                // Move the Wolf
+                if (MoveWolf(x - 1, y - 1))
+                {
+                    return;
+                }
+                else
+                {
+                    // Try again
+                    Console.WriteLine("Can not move there!");
+                    continue;
+                }
+            }
+        }
+
         // Shows all the moves that are possible for the wolf piece.
         private void DisplayWolfMoves()
         {
@@ -101,7 +149,98 @@ namespace WAS
             return false;
         }
 
-        // Show all the moves that are possible possible for the sheep
+        // Sheeps turn
+		public void DoSheepTurn()
+        {
+            Console.WriteLine("Select a sheep!");
+
+            // Get user input
+            while (true)
+            {
+
+                Console.WriteLine("Usage: '<idx>'");
+                // Convert it to an int
+                int idx;
+
+                if (!int.TryParse(Console.ReadLine(), out idx))
+                {
+                    Console.WriteLine("idx must be int!");
+                    continue;
+                }
+
+                // Then try to do the Sheep's turn
+                if (DoSingularSheepTurn(idx - 1))
+                {
+                    return;
+                }
+
+                else
+                {
+                    Console.WriteLine("Select another sheep!");
+                    continue;
+                }
+            }
+        }
+
+        // Processes a single Sheep's turn
+        private bool DoSingularSheepTurn(int idx)
+        {
+            // If `idx` isn't 0, 1, 2, 3, return false
+            if (idx < 0 || idx >= 4) { return false; }
+
+            DisplaySheepMoves(idx);
+
+
+            // Get user input
+            while (true)
+            {
+
+                Console.WriteLine("Usage: '<x> <y>'");
+
+                String[] args = Console.ReadLine().Split();
+
+                // If we received 1 argument and it's 'q' or 'Q', exit and rety
+                if (args.Length == 1 && (args[0] == "q" || args[0] == "Q"))
+                {
+                    return false;
+                }
+
+                // If we didn't receive 2 arguments "x y" warn and retry
+                if (args.Length != 2)
+                {
+                    Console.WriteLine("Must have 2 arguments'");
+                    continue;
+                }
+
+                // Try to convert both arguments to ints
+                int x, y;
+                if (!int.TryParse(args[0], out x))
+                {
+                    Console.WriteLine("x must be int!");
+                    continue;
+                }
+
+                if (!int.TryParse(args[1], out y))
+                {
+                    Console.WriteLine("y must be int!");
+                    continue;
+                }
+
+                // And try to move the Sheep
+                if (MoveSheep(idx, x - 1, y - 1))
+                {
+                    return true;
+                }
+                else
+                {
+                    // Try again
+                    Console.WriteLine("Can not move there!");
+                    continue;
+                }
+            }
+        }
+
+        // Show all the moves that are possible for the Sheep
         private void DisplaySheepMoves(int idx)
         {
             Console.WriteLine("Possible sheep {0} moves:", idx + 1);
@@ -110,16 +249,19 @@ namespace WAS
                 Console.WriteLine("{0}, {1}", sheep[idx][0] - 1 + 1,
                     sheep[idx][1] - 1 + 1);
             }
+
             if (CanMoveSheep(idx, sheep[idx][0] + 1, sheep[idx][1] - 1))
             {
                 Console.WriteLine("{0}, {1}", sheep[idx][0] + 1 + 1,
                     sheep[idx][1] - 1 + 1);
             }
+
             if (CanMoveSheep(idx, sheep[idx][0] - 1, sheep[idx][1] + 1))
             {
                 Console.WriteLine("{0}, {1}", sheep[idx][0] - 1 + 1,
                     sheep[idx][1] + 1 + 1);
             }
+
             if (CanMoveSheep(idx, sheep[idx][0] + 1, sheep[idx][1] + 1))
             {
                 Console.WriteLine("{0}, {1}", sheep[idx][0] + 1 + 1,
@@ -127,41 +269,41 @@ namespace WAS
             }
         }
 
-        /// Verifies if the sheep can move to x, y
+        // Checks if the Sheep can move to x, y
 		private bool CanMoveSheep(int idx, int x, int y)
         {
-            // If idx isn't 0, 1, 2 or 3, return false
+            // If idx isn't 0, 1, 2 or 3
             if (idx < 0 || idx >= 4)
             {
                 return false;
             }
 
-            // if x or y aren't in 0..7, return false
+            // if x or y aren't in 0..7
             if (x < 0 || x >= 8 || y < 0 || y >= 8)
             {
                 return false;
             }
 
-            // If x or y aren't exactly 1 apart, return false
+            // If x or y aren't exactly 1 apart
             if (Math.Abs(sheep[idx][0] - x) != 1 || Math.Abs(sheep[idx][1]
                 - y) != 1)
             {
                 return false;
             }
 
-            // If the position has a sheep or the wolf, return false
+            // If the position has a Sheep or the Wolf
             if (IsSheepAt(x, y) || wolf[0] == x && wolf[1] == y)
             {
                 return false;
             }
 
-            // Else it can move
+            // Can move
             return true;
         }
 
         public bool MoveSheep(int idx, int x, int y)
         {
-            // If it can move there, do it and return true
+
             if (CanMoveSheep(idx, x, y))
             {
                 sheep[idx][0] = x;
@@ -169,7 +311,6 @@ namespace WAS
                 return true;
             }
 
-            // Else return false
             return false;
         }
 
