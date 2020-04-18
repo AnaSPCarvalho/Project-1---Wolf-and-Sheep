@@ -7,11 +7,12 @@
 * Joana Silva (a21805651)
 
 ## Who did what:
-|     Ana Carvalho     |     Afonso Teixeira     |     Joana Silva     |
-|----------------------|-------------------------|---------------------|
-| Wolf and Sheep moves |Correction of the sheep movement                    |            Board printing         |
-|   Instructions                   |                         |                     |wolf and sheep starting positionsUTF 8
-XML documentation
+|     Ana Carvalho     |     Afonso Teixeira            |     Joana Silva                 |
+|----------------------|--------------------------------|---------------------------------|
+|Wolf and Sheep moves  |Correction of the sheep movement|Board printing                   |
+|Instructions          |UTF 8                           |wolf and sheep starting positions|
+|XML Documentation     |                                |XML Documentation                |
+
 
 Afonso Teixeira:
 1. Corrention of the sheep movement;
