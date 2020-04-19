@@ -29,6 +29,36 @@ namespace WAS
             };
         }
 
+        /// Checks if the wolf is at the bottom
+        public bool IsWolfAtBottom()
+        {
+            // If the y of the wolf is 7, he's at the end
+            return wolf[1] == 7;
+        }
+
+        /// Checks if the wolf is surrounded
+        public bool IsWolfSurrounded()
+        {
+            // Return if there's a wall or sheep at each corner
+            return IsSheepOrWallAt(wolf[0] - 1, wolf[1] - 1) &&
+                   IsSheepOrWallAt(wolf[0] + 1, wolf[1] - 1) &&
+                   IsSheepOrWallAt(wolf[0] - 1, wolf[1] + 1) &&
+                   IsSheepOrWallAt(wolf[0] + 1, wolf[1] + 1);
+        }
+
+        /// Checks if a sheep or a wall is at position x, y
+        private bool IsSheepOrWallAt(int x, int y)
+        {
+            // If x or y are negative or 8+, we're in a wall
+            if (x < 0 || y < 0 || x >= 8 || y >= 8)
+            {
+                return true;
+            }
+
+            // Else check if a sheep is there
+            return IsSheepAt(x, y);
+        }
+
         // Verifies if the sheep is at a certain position x,y
         private bool IsSheepAt(int x, int y)
         {

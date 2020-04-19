@@ -20,8 +20,25 @@ namespace WAS
 			while (true)
 			{
 
-				// Display the board
-				board.Display();
+                //Check if the game is over
+                if (board.IsWolfAtBottom())
+                {
+                    board.Display();
+
+                    Console.WriteLine("\nWOLF WON!!");
+                    break;
+                }
+
+                else if (board.IsWolfSurrounded())
+                {
+                    board.Display();
+
+                    Console.WriteLine("\nSHEEP WON!");
+                    break;
+                }
+
+                // Display the board
+                board.Display();
 
 				// Check the turn
 				if (isWolfTurn)
