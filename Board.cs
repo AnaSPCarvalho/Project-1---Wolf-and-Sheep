@@ -336,6 +336,21 @@ namespace WAS
         // Prints the board
         public void Display()
         {
+
+            //Write instructions.
+            Console.WriteLine("Wolf and Sheep\n\n*Instructions*\n" + "This " +
+                "is a Player vs Player game.\n" + "One player will play as " +
+                "the Wolf, while the other will play as the Sheep. \nThe " +
+                "Wolf moves diagonally forward and backwards. \nThe Sheep " +
+                "only moves diagonally forward.\nThe Wolf wins the game when" +
+                " he gets to one of the sheep original houses.\nThe Sheep " +
+                "wins the game when they block the Wolf so that it cannot " +
+                "move.\nThe Wolf is represented with a W. The sheep are " +
+                "represented with a number form 1 to 4.\nYou can only move " +
+                "one sheep per turn.\n If you decide to change the sheep you" +
+                " want to move, press q or Q, to select other sheep.\nThe " +
+                "Wolf always moves first!\n\n");
+
             // Write all xs
             Console.Write("  ");
             for (int x = 0; x < 8; x++)
