@@ -23,6 +23,9 @@ o	Indicação do repositório público Git utilizado. Esta indicação é opcion
 >	Descrição da solução, com breve explicação de como o programa foi organizado, indicação dos métodos/funções e enumerações criadas.
 >	Um fluxograma mostrando a sequência do programa.
 
+##Flowchart
+![Flowchart](Flowchart.svg)
+
 ## Referencies
 
 UTF-8:
@@ -36,4 +39,3 @@ Piece movements:
 * To better understand how to place the pieces on the board and how to show the possible moves, we whatched a tutorial video on how to make a chess board in c#, to get and idea on how we could aplie in our project.
 ** [C# Chess Board 03 next legal moves](https://www.youtube.com/watch?v=iV9hBTi-QB8&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=3)
 ** [C# Chess Board 06 place piece](https://www.youtube.com/watch?v=qV1ib7dfXvk&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=6)
-
