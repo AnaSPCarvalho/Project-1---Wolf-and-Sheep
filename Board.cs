@@ -286,17 +286,6 @@ namespace WAS
                     sheep[idx][1] - 1 + 1);
             }
 
-            if (CanMoveSheep(idx, sheep[idx][0] - 1, sheep[idx][1] + 1))
-            {
-                Console.WriteLine("{0}, {1}", sheep[idx][0] - 1 + 1,
-                    sheep[idx][1] + 1 + 1);
-            }
-
-            if (CanMoveSheep(idx, sheep[idx][0] + 1, sheep[idx][1] + 1))
-            {
-                Console.WriteLine("{0}, {1}", sheep[idx][0] + 1 + 1,
-                    sheep[idx][1] + 1 + 1);
-            }
         }
 
         // Checks if the Sheep can move to x, y

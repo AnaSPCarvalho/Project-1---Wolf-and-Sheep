@@ -5,7 +5,7 @@ namespace WAS
     class Program
     {
         /// Entry function
-        static void Main()
+        static void Main(string[] args)
         {
             // Set console to accept 'utf-8'
             // For certain characters
