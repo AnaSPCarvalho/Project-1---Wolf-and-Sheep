@@ -336,7 +336,6 @@ namespace WAS
         // Prints the board
         public void Display()
         {
-
             //Write instructions.
             Console.WriteLine("Wolf and Sheep\n\n*Instructions*\n" + "This " +
                 "is a Player vs Player game.\n" + "One player will play as " +
@@ -351,18 +350,19 @@ namespace WAS
                 " want to move, press q or Q, to select other sheep.\nThe " +
                 "Wolf always moves first!\n\n");
 
-            // Write all xs
-            Console.Write("  ");
+            // Write all xs.
+            Console.Write("    ");
             for (int x = 0; x < 8; x++)
             {
                 Console.Write(x + 1);
+                Console.Write("  ");
             }
             Console.WriteLine();
 
-            // Write the top line of the board box
-            Console.WriteLine(" ┌────────┐");
+            // Write the top line of the board box.
+            Console.WriteLine(" ┌────────────────────────┐");
 
-            // Write all ines of the board
+            // Write all lines of the board.
             for (int y = 0; y < 8; y++)
             {
                 // Write the current y
@@ -374,50 +374,51 @@ namespace WAS
                 // Write all columns
                 for (int x = 0; x < 8; x++)
                 {
-                    // If this is a wolf, write a '#'
+                    // If this is a wolf, write a 'W'
                     if (wolf[0] == x && wolf[1] == y)
                     {
-                        Console.Write("º");
+                        Console.Write(" W ");
                     }
 
                     // Else if this is a sheep, write it's number
                     else if (sheep[0][0] == x && sheep[0][1] == y)
                     {
-                        Console.Write("1");
+                        Console.Write(" 1 ");
                     }
                     else if (sheep[1][0] == x && sheep[1][1] == y)
                     {
-                        Console.Write("2");
+                        Console.Write(" 2 ");
                     }
                     else if (sheep[2][0] == x && sheep[2][1] == y)
                     {
-                        Console.Write("3");
+                        Console.Write(" 3 ");
                     }
                     else if (sheep[3][0] == x && sheep[3][1] == y)
                     {
-                        Console.Write("4");
+                        Console.Write(" 4 ");
                     }
 
                     // Else if it's a non-moveable space, draw a block
                     else if ((x % 2 == 0 && y % 2 == 0) ||
                               (x % 2 == 1 && y % 2 == 1))
                     {
-                        Console.Write("█");
+                        Console.Write("███");
                     }
 
                     // Else it's empty, write a ' ' (space)
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write("   ");
                     }
                 }
 
-                // Write the right column
+                // Write the right column.
                 Console.WriteLine("│");
+
             }
 
-            // Write the bottom line of the board box
-            Console.WriteLine(" └────────┘");
+            // Write the bottom line of the board box.
+            Console.WriteLine(" └────────────────────────┘");
         }
     }
 }
